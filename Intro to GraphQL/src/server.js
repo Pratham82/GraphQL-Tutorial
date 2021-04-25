@@ -13,6 +13,11 @@ export const start = async () => {
   const rootSchema = `
     type Cat{
       name: String
+      color: String
+    }
+    input CatInput{
+      name: String,
+      color:String
     }
     type Employee{
       name: String,
@@ -24,6 +29,9 @@ export const start = async () => {
     type Query{
       myCat: Cat
       emp: Employee
+    }
+    type Mutation{
+      newCat(input: CatInput!): Cat!
     }
     schema {
       query: Query
@@ -37,7 +45,8 @@ export const start = async () => {
       Query: {
         myCat() {
           return {
-            name: 'Drake'
+            name: 'Drake',
+            color: 'White'
           }
         },
 
