@@ -1,0 +1,12 @@
+enum ProductType {
+  GAMING_PC
+  BIKE
+  DRONE
+}
+
+enum BikeType {
+  KIDS
+  MOUNTAIN
+  ELECTRIC
+  BEACH
+}
