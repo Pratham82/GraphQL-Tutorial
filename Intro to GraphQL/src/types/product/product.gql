@@ -11,7 +11,7 @@ enum BikeType {
   BEACH
 }
 
-type Product{
+type Product {
   name: String!
   price: Float!
   image: String!
@@ -23,36 +23,34 @@ type Product{
   bikeType: BikeType
 }
 
-input NewProductInput{
- name: String!
- price: Float!
- image: String!
- type: ProductType!
- description: String
- liquidCooled: Boolean
- bikeType: BikeType
- range: String
+input NewProductInput {
+  name: String!
+  price: Float!
+  image: String!
+  type: ProductType!
+  description: String
+  liquidCooled: Boolean
+  bikeType: BikeType
+  range: String
 }
 
-input UpdateProductInput{
- name: String
- price: String
- image: String
- description: String
- liquidCooled: Boolean
- bikeType: BikeType
- range: String
+input UpdateProductInput {
+  name: String
+  price: String
+  image: String
+  description: String
+  liquidCooled: Boolean
+  bikeType: BikeType
+  range: String
 }
 
 extend type Query {
- product(id: ID!): Product!
- products: [Product]!
+  product(id: ID!): Product!
+  products: [Product]!
 }
 
-
-extend type Mutation{
- newProduct(input: NewProductInput!):Product!
- updateProduct(id: ID! , input: UpdateProductInput!):Product!
- removeProduct(id:ID!):Product!
+extend type Mutation {
+  newProduct(input: NewProductInput!): Product!
+  updateProduct(id: ID!, input: UpdateProductInput!): Product!
+  removeProduct(id: ID!): Product!
 }
-
